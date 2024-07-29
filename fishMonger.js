@@ -1,5 +1,5 @@
 const { boatInventory } = require("./fishingBoat.js")
-const { dailyPriceLimit } = require("./main.js")
+
 
 const mongerInventory = (maxPricePerFish) => {
 const freshCatch = boatInventory();
@@ -17,9 +17,17 @@ const fishBought = filteredFish.map(
             amount: 10
         };
     });
-return fishBought;
 };
 
+const chefSelection = fishBought.map(fish => {
+    return {
+        id: fish.id,
+        species: fish.species,
+        weight: fish.weight,
+        price: fish.price,
+        amount: Math.ceil(fish.amount/2)
+    };
+});
 
 
 module.exports = { mongerInventory };
