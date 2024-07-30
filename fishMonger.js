@@ -17,7 +17,8 @@ const fishBought = filteredFish.map(
             amount: 10
         };
     });
-};
+
+
 
 const chefSelection = fishBought.map(fish => {
     return {
@@ -26,9 +27,11 @@ const chefSelection = fishBought.map(fish => {
         weight: fish.weight,
         price: fish.price,
         amount: Math.ceil(fish.amount/2)
+
     };
 });
-
+return chefSelection;s
+};
 
 module.exports = { mongerInventory };
 
